@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        .container {
+
+            padding: 25px;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            cursor: pointer;
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .stars input:checked+label {
+            color: #ffcc00;
+        }
+
+        .satisfaction-label {
+            margin-bottom: 8px;
+        }
+
+        .table-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .table-cell {
+            padding: 8px;
+            text-align: center;
+            border: none;
+        }
+
+
+
+        .suggestion-box {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="container">
+            <label><b>Name</b> <span style="color: red;">*</span></label>
+
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="firstName" name="firstName" required placeholder="First Name">
+                <input type="text" id="lastName" name="lastName" required placeholder="Last Name">
+            </div>
+
+
+            <label for="email"><b>Email</b> <span style="color: red;">*</span></label>
+            <input type="email" id="email" name="email" required>
+
+            <label><b>Your Experience</b> <span style="color: red;">*</span></label>
+            <div class="stars">
+                <input type="radio" id="star5" name="experience" value="5" checked>
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="experience" value="4" checked>
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="experience" value="3" checked>
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="experience" value="2" checked>
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="experience" value="1" checked>
+                <label for="star1">★</label>
+            </div>
+
+
+            <label class="satisfaction-label"><b>How satisfied are you with</b> <span
+                    style="color: red;">*</span></label>
+            <div class="table-container">
+                <div class="table-cell"></div>
+                <div class="table-cell">Very Unsatisfied</div>
+                <div class="table-cell">Unsatisfied</div>
+                <div class="table-cell">Neutral</div>
+                <div class="table-cell">Satisfied</div>
+                <div class="table-cell">Very Satisfied</div>
+
+                <div class="table-cell" style="text-align: left;">Purchase</div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction1" name="Very Unsatisfied" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Unsatisfied" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Neutral" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Satisfied" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Very Satisfied" value="1">
+                </div>
+
+                <div class="table-cell" style="text-align: left;">Service</div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction1" name="Very Unsatisfied" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Unsatisfied" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Neutral" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Satisfied" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Very Satisfied" value="1">
+                </div>
+
+                <div class="table-cell" style="text-align: left;">Company Overall</div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction1" name="Very Unsatisfied" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Unsatisfied" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Neutral" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Satisfied" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="satisfaction2" name="Very Satisfied" value="1">
+                </div>
+            </div>
+
+
+            <label class="satisfaction-label"><b>How likely are you with</b> <span style="color: red;">*</span></label>
+            <div class="table-container">
+                <div class="table-cell"></div>
+                <div class="table-cell">Very Unlikely</div>
+                <div class="table-cell">Unlikely</div>
+                <div class="table-cell">Neutral</div>
+                <div class="table-cell">likely</div>
+                <div class="table-cell">Very likely</div>
+
+                <div class="table-cell" style="text-align: left;">Buy from us again</div>
+                <div class="table-cell">
+                    <input type="radio" id="likely1" name="Very Unlikely" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely2" name="Unlikely" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely3" name="Neutral" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely4" name="likely" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely5" name="Very likely" value="1">
+                </div>
+
+                <div class="table-cell" style="text-align: left;">Recommend our product to others</div>
+                <div class="table-cell">
+                    <input type="radio" id="likely1" name="Very Unlikely" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely2" name="Unlikely" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely3" name="Neutral" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely4" name="likely" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely5" name="Very likely" value="1">
+                </div>
+
+                <div class="table-cell" style="text-align: left;">Recommend our company to others</div>
+                <div class="table-cell">
+                    <input type="radio" id="likely1" name="Very Unlikely" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely2" name="Unlikely" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely3" name="Neutral" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely4" name="likely" value="1">
+                </div>
+                <div class="table-cell">
+                    <input type="radio" id="likely5" name="Very likely" value="1">
+                </div>
+            </div>
+
+            <br>
+            <label for="suggestion" class="suggestion-label"><b>Additional comments or suggestions</b></label>
+            <textarea id="suggestion" name="suggestion" class="suggestion-box" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+
+        </div>
+    </div>
+</body>
+
+</html>
